@@ -21,10 +21,13 @@ radio.onReceivedNumber(function (receivedNumber) {
         radio.sendNumber(120)
         basic.pause(1000)
         radio.setGroup(420)
+    } else if (receivedNumber == 121) {
+        radio.setGroup(420)
+        radio.sendNumber(122)
     }
 })
-radio.setTransmitPower(2)
-radio.setGroup(420)
+radio.setTransmitPower(3)
+radio.setGroup(1)
 basic.forever(function () {
     if (CutebotPro.ultrasonic(SonarUnit.Centimeters) < 5) {
         CutebotPro.pwmCruiseControl(-50, -50)
